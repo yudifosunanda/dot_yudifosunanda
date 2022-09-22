@@ -27,6 +27,9 @@ Cara penggunaan sistem
 4.Setelah login baru lah endpoint <b>[GET] /search/provinces?id={province_id}</b> dan <b>[GET] /search/cities?id={city_id}</b> bisa di akses.<br>
 5.Untuk melakukan <b>swapable implementation</b>, anda dapat mengganti konfigurasinya pada <b>config/type_fetch.php</b>. Ganti value dari <b>type</b> ke metode fetching yang di inginkan yaitu <b>database</b> untuk mengambil data dari DATABASE & <b>direct_api</b> untuk mengambil data langsung dari Raja Ongkir.
 
+
+*Terdapat 2 Branch yaitu sprint 1 dan sprint 2
+
 Terimakasih.
 
 
