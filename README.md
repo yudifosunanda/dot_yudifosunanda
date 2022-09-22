@@ -20,7 +20,7 @@ Set up Database
 Cara penggunaan sistem
 -------------------
 1.Jalankan <b>start /b php artisan serve</b> untuk menjalankan project.<br>
-2.Untuk melakukan <b> Fetching Data dari Raja ongkir ke dalam Database </b> jalankan command <b>php artisan fetching_raja_ongkir_command</b>.<br>
+2.Untuk melakukan <b> Fetching Data dari Raja ongkir ke dalam Database </b> jalankan command <b>php artisan fetching_raja_ongkir_command</b><br>
 3.Untuk mengakses endpoint untuk mengambil data Provinsi & Kota, terlebih dahulu harus melakukan login pada <b>[POST] /api/login</b> dengan:<br>
   Email:admin@gmail.com<br>
   Password:admin<br>
