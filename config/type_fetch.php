@@ -12,7 +12,7 @@ return [
     */
 
     'type_fetch' => [
-          'type' => 'database',
+          'type' => 'direct_api',
       ],
 
 
