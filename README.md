@@ -11,8 +11,8 @@ Set up awal
 
 Set up Database
 -------------------
-1.Copy file .env.example dan rename menjadi .env .<br>
-2.Buatlah sebuah Database sesuai dengan yang tertera pada file .env .<br>
+1.Copy file .env.example dan rename menjadi .env <br>
+2.Buatlah sebuah Database sesuai dengan yang tertera pada file .env <br>
 3.Jalankan perintah <b>php artisan migrate</b> pada command prompt untuk memasukan semua table yang ada ke dalam Database.<br>
 4.Jalankan perintah <b>php artisan db:seed --class=UserSeeder</b> pada command prompt untuk memasukan dummy data user ke table users<br>
 5.Setelah selesai jalankan perintah <b>php artisan key:generate</b> pada command prompt untuk menggenerate key project.<br>
