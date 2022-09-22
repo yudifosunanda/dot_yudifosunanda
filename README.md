@@ -1,11 +1,16 @@
 # dot_yudifosunanda
 
-Ini Headeing Level 1
-====================
+Panduan Penggunaan
 
-ini paragraf, bla bla bla...
-
-Ini heading level 2
+Set up awal
 -------------------
 
-ini paragraf, bla bla bla...
+1.Lakukan Pull request dari repository ini.
+2.Jalankan perintah <b>"Composer install"</b> pada command prompt.
+
+Set up Database
+-------------------
+1.Copy file .env.example dan rename menjadi .env .
+2.Buatlah sebuah Database sesuai dengan yang tertera pada file .env .
+3.Jalankan perintah 
+2.Setelah selesai jalankan perintah "php artisan key:generate".
