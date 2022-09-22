@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePajakTable extends Migration
+class CreateProvinceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreatePajakTable extends Migration
      */
     public function up()
     {
-        Schema::create('pajak', function (Blueprint $table) {
-          $table->id();
-          $table->string('nama');
-          $table->decimal('rate', $precision = 13, $scale = 1);
-          $table->timestamps();
+        Schema::create('province', function (Blueprint $table) {
+            $table->id('province_id');
+            $table->string('province');
         });
     }
 
@@ -28,6 +26,6 @@ class CreatePajakTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pajak');
+        Schema::dropIfExists('province');
     }
 }

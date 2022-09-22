@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ItemController;
-use App\Http\Controllers\Api\PajakController;
+use App\Http\Controllers\Api\menus\GetDataController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +16,27 @@ use App\Http\Controllers\Api\PajakController;
 |
 */
 
-//route CRUD Item
-//pajak
-Route::get('/pajak/get',[PajakController::class,'getdata']);
-Route::post('/pajak/create',[PajakController::class,'create']);
-Route::post('/pajak/update/{id}',[PajakController::class,'update']);
-Route::delete('/pajak/delete/{id}',[PajakController::class,'delete']);
+//route
+//from db
 
-//item
-Route::post('/item/create',[ItemController::class,'create']);
-Route::post('/item/update/{id}',[ItemController::class,'update']);
-Route::delete('/item/delete/{id}',[ItemController::class,'delete']);
+Route::post('/login', [AuthController::class, 'login']);
 
-// list data item
-Route::get('/item/get',[ItemController::class,'getdata']);
+Route::group(['middleware'=>'auth:sanctum'],function(){
+  $type_fetch =  Config::get('type_fetch.type_fetch.type');
+
+  if($type_fetch=='database'){
+    Route::get('/search/provinces/{province_id}',[GetDataController::class,'get_province_from_db']);
+    Route::get('/search/cities/{city_id}',[GetDataController::class,'get_city_from_db']);
+
+  }else if($type_fetch=='direct_api'){
+    Route::get('/search/provinces/{province_id}',[GetDataController::class,'get_province_from_direct_api']);
+    Route::get('/search/cities/{city_id}',[GetDataController::class,'get_city_from_direct_api']);
+
+  }else{
+    Route::get('/search/provinces/{province_id}',[GetDataController::class,'get_province_from_db']);
+    Route::get('/search/cities/{city_id}',[GetDataController::class,'get_city_from_db']);
+
+  }
+
+  Route::get('/logout',[AuthController::class,'logout']);
+});
